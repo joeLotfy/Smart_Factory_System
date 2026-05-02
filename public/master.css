@@ -1,0 +1,132 @@
+
+body {
+    font-family: 'Space Mono', 'Consolas', monospace;    
+   background-color: #040910; 
+    background-image: linear-gradient(135deg, #040910 0%, #0c1729 100%); 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    animation: backgroundGlow 15s infinite alternate; 
+}
+
+
+@keyframes backgroundGlow {
+    0% {
+        box-shadow: inset 0 0 50px rgba(0, 255, 204, 0.1);
+    }
+    100% {
+        box-shadow: inset 0 0 50px rgba(0, 150, 255, 0.1);
+    }
+}
+
+
+
+.login-container {
+    background: rgba(18, 26, 40, 0.8); 
+    backdrop-filter: blur(10px) saturate(1.2); 
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);  
+    width: 380px;
+    padding: 45px 35px;
+    border-radius: 15px; 
+    border: 1px solid rgba(0, 255, 204, 0.3); 
+    box-shadow: 0 0 60px rgba(0, 199, 229, 0.8);  
+    text-align: center;
+    color: #F0F8FF;   
+    transform: scale(0.95);
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.2s forwards; 
+}
+
+
+@keyframes fadeIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+h2 { 
+    margin-bottom: 30px; 
+    color: #00FFCC; 
+    font-size: 2.3em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px #00FFCC, 0 0 25px rgba(0, 255, 204, 0.6); 
+    border-bottom: 2px solid #00FFCC;
+    padding-bottom: 10px;
+}
+
+
+label { 
+    display: block; 
+    margin-bottom: 8px; 
+    text-align: right; 
+    color: #99FFFF; 
+    font-size: 1em;
+}
+
+input { 
+    width: 100%; 
+    padding: 15px; 
+    margin-bottom: 25px; 
+    border: none; 
+    border-bottom: 2px solid #4a5a6a; 
+    background-color: rgba(255, 255, 255, 0.08); 
+    color: #FFFFFF;
+    border-radius: 6px; 
+    box-sizing: border-box; 
+    transition: all 0.3s ease;
+}
+
+
+input:focus {
+    border-bottom: 2px solid #FF55AA; 
+    background-color: rgba(255, 255, 255, 0.15); 
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 85, 170, 0.8); 
+    transform: scale(1.01); 
+}
+
+
+button { 
+    width: 100%; 
+    padding: 18px; 
+    background: linear-gradient(90deg, #00FFCC, #00BFFF); 
+    color: #0B111E; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 1.2em; 
+    font-weight: 700;
+    margin-top: 30px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* منحنى حركة أكثر سلاسة */
+}
+
+button:hover { 
+    background: linear-gradient(90deg, #00BFFF, #00FFCC); 
+    box-shadow: 0 0 35px rgba(0, 191, 255, 1.0), 
+                0 0 5px rgba(0, 255, 204, 1.0); /* توهج مزدوج */
+    transform: scale(1.05) rotateZ(-1deg); /* تكبير ودوران خفيف (دلل الزر) */
+}
+
+
+#message { 
+    color: #FF55AA; 
+    margin-top: 20px; 
+    font-weight: bold;
+    animation: pulseError 0.5s infinite alternate; /* حركة نبض لرسالة الخطأ */
+}
+
+@keyframes pulseError {
+    from { color: #FF55AA; }
+    to { color: #FFBBEE; }
+}
+
+.hidden { 
+    display: none; 
+}

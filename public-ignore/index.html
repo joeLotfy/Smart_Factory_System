@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DHT11 Dashboard</title>
+  <style>
+    body { font-family: Arial; text-align: center; }
+    .box { font-size: 24px; margin: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>🌡 DHT11 Live Dashboard</h1>
+
+  <div class="box">Temperature: <span id="temp">--</span> °C</div>
+  <div class="box">Humidity: <span id="hum">--</span> %</div>
+
+  <script>
+    async function fetchData() {
+      const res = await fetch('/api/latest');
+      const data = await res.json();
+
+      if (data) {
+        document.getElementById('temp').innerText = data.temperature;
+        document.getElementById('hum').innerText = data.humidity;
+      }
+    }
+
+    setInterval(fetchData, 2000);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DashBoard - Smart Factory</title>
+        <link rel="stylesheet" href="dash.css">
+        <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">    
+    </head>
+
+    <body>
+        <div id="sidebar" class="sidebar">
+            <button id="toggleBtn" class="toggle-btn">&#9776;</button>
+
+            <ul class="menu">
+                <li>
+                    <a href="/dashboard" data-path="/dashboard">
+                        <i class="fa-solid fa-gauge"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/reports" data-path="/reports">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span class="text">Daily Reports</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/analytics" data-path="/analytics">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="text">Analytics</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/logout" class="logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="mainContent" class="main-content">
+            <!-- EVERYTHING ELSE ON THE PAGE -->
+            <header>
+                <h1>Today's Reports</h1>
+                <!--<a href="/dashboard">DASHBOARD</a>
+                <a href="/logout">LOGOUT</a> -->
+            </header>
+
+            <div class="dashboard">
+
+                <h2>Write Today’s Notes</h2>
+
+                <textarea id="reportText" rows="5" style="width:100%;"></textarea>
+                <br><br>
+                <button id="saveReport">Add to report</button>
+
+                <h3>Today’s Entries</h3>
+                <ul id="entriesList"></ul>
+                <br><br>
+                <p id="statusMsg"></p>
+
+            </div>
+        </div>
+            <script src="reports.js"></script>
+            <script src="sidebar.js"></script>
+        
+    </body>
+</html>

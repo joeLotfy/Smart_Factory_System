@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DashBoard - Smart Factory</title>
+        <link rel="stylesheet" href="dash.css">
+        <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">    
+    </head>
+
+    <body>
+        <div id="sidebar" class="sidebar">
+            <button id="toggleBtn" class="toggle-btn">&#9776;</button>
+
+            <ul class="menu">
+                <li>
+                    <a href="/dashboard" data-path="/dashboard">
+                        <i class="fa-solid fa-gauge"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/reports" data-path="/reports">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span class="text">Daily Reports</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/analytics" data-path="/analytics">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="text">Analytics</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/logout" class="logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <header>
+            <h1>Data Analytics</h1>
+            <!--<a href="/dashboard">DASHBOARD</a> this was commented to erase buttons since we added the sidebar
+            <a href="/logout">LOGOUT</a>-->
+        </header>
+        <div id="mainContent" class="main-content">
+            <!-- EVERYTHING ELSE ON THE PAGE -->
+
+            <div class="kpi-row">
+
+                <div class="kpi-card">
+                    <h3>Maximum Temperature</h3>
+                    <p id="maxTempValue">--</p>
+                    <small id="maxTempDate"></small>
+                </div>
+
+                <div class="kpi-card">
+                    <h3>Highest Gas Leak</h3>
+                    <p id="maxGasValue">--</p>
+                    <small id="maxGasDate"></small>
+                </div>
+
+                <div class="kpi-card">
+                    <h3>Monthly Motion Total</h3>
+                    <p id="motionTotalValue">--</p>
+                    <small id="motionStartDate"></small>
+                </div>
+
+            </div>
+
+
+
+            <div class="charts-row">
+                <div class="chart-container">
+                    <h2>Daily Average Temperature vs Humidity last 30 days</h2>
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h2>Daily Average Gas readings last 30 days</h2>
+                    <canvas id="mq2Chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart.js -->
+            <script src="/assets/chartjs/chart.umd.js"></script>        <!-- important that chart.js loads BEFORE the cahrt code in analytics.js -->
+            <script src="analytics.js"></script>
+        
+
+
+
+        </div>
+
+        <script src="sidebar.js"></script>
+        
+    </body>
+</html>

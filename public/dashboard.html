@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DashBoard - Smart Factory</title>
+        <link rel="stylesheet" href="dash.css">
+        <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">    
+    </head>
+    
+    <body>
+        <div id="sidebar" class="sidebar">
+            <button id="toggleBtn" class="toggle-btn">&#9776;</button>
+
+            <ul class="menu">
+                <li>
+                    <a href="/dashboard" data-path="/dashboard">
+                        <i class="fa-solid fa-gauge"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/reports" data-path="/reports">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span class="text">Daily Reports</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/analytics" data-path="/analytics">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="text">Analytics</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/logout" class="logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="mainContent" class="main-content">
+            <!-- EVERYTHING ELSE ON THE PAGE -->
+
+            <!-- Header -->
+            <header>
+                <h1 data-key="dashboardTitle">Smart Factory Dashboard</h1>
+                <!-- <a href="/logout" data-key="logoutLink">LOG OUT</a>
+                <a href="/reports">
+                    <button>Daily Reports</button>
+                </a> -->
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard">
+
+                <h2 data-key="sensorDataTitle">Latest Sensors Readings</h2>
+
+                <table id="sensorTable">
+                    <thead>
+                        <tr>
+                            <th data-key="sensorType">Sensor Type</th>
+                            <th data-key="value">Value</th>
+                            <th data-key="time">Time</th>
+                            <th data-key="status">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be inserted here by dash.js -->
+                    </tbody>
+                </table>
+
+                <button id="refreshBtn" data-key="refreshBtn">REFRESH</button>
+
+                <!-- Alerts-
+                <div id="alerts" class="hidden">
+                    <p data-key="alertExample">
+                        تنبيه: توجد حركة غير طبيعية بالمكان! (مثال)
+                    </p>
+                </div>-->
+        </div>
+            <!-- JavaScript -->
+            <script src="dash.js"></script>
+            <script src="sidebar.js"></script>
+        
+    </body>
+</html>
